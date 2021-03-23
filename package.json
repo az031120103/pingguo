@@ -1,0 +1,22 @@
+{
+  "name": "pingguo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/az031120103/pingguo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/az031120103/pingguo/issues"
+  },
+  "homepage": "https://github.com/az031120103/pingguo#readme",
+  "dependencies": {
+    "kwlib-re": "^1.0.1"
+  }
+}
