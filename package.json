@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/az031120103/pingguo#readme",
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "kwlib-re": "^1.0.1"
   }
 }
