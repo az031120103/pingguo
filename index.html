@@ -8,59 +8,112 @@
   <title>pingguo.cn</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html {
-      min-height: 100%;
-      font: 16px/1.5 "Heiti SC", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", verdana;
-      color: #333;
-      background: #f9f9f9;
+    html, body { min-height: 100%; }
+    body {
+      min-height: 100svh;
       overflow-x: hidden;
+      color: #f2efee;
+      background: #0c0b0c;
+      font: 16px/1.5 "Heiti SC", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", verdana;
     }
-    p { min-height: 24px; }
-    em { font-style: normal; color: #f30; }
-    .grid { position: relative; min-height: 100vh; padding-bottom: 56px; }
-    .main { width: 300px; max-width: calc(100% - 40px); margin: 0 auto 50px; padding-top: 90px; }
-    .juzi { font-size: 12px; margin-bottom: 15px; font-style: italic; }
-    .label { display: inline-block; width: 48px; text-align: right; }
-    .contact-row {
-      min-height: 44px;
+    .grid {
+      position: relative;
       display: flex;
+      min-height: 100svh;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      padding: 48px 24px 76px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(146, 20, 29, .18), transparent 52%), #0c0b0c;
     }
+    .main {
+      width: min(100%, 620px);
+      padding: clamp(26px, 6vw, 54px);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-top: 2px solid #bd252e;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .015));
+      box-shadow: 0 24px 90px rgba(0, 0, 0, .34);
+    }
+    .juzi {
+      margin-bottom: 34px;
+      padding-left: 18px;
+      border-left: 1px solid rgba(210, 49, 58, .7);
+      color: #aaa3a3;
+      font-size: 13px;
+      font-style: italic;
+      line-height: 1.65;
+    }
+    .juzi p { min-height: 0; }
+    .juzi p:first-child, .juzi p:last-child { color: #d04b52; }
+    .coming-soon > p { min-height: 0; }
+    .coming-soon > p:first-child {
+      color: #f4f0ef;
+      font-size: clamp(19px, 4vw, 23px);
+      font-weight: 500;
+      letter-spacing: .04em;
+    }
+    .coming-soon > p:nth-child(2) { margin-top: 5px; color: #a8a2a2; font-size: 14px; }
+    .coming-soon > p:nth-child(3) { display: none; }
+    em { color: #f07075; font-style: normal; }
+    .label { display: inline-block; color: #9e9999; }
+    .contact-row {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr) auto;
+      min-height: 58px;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid rgba(255, 255, 255, .09);
+    }
+    .coming-soon > p:nth-child(2) { margin-bottom: 22px; }
     .contact-action {
-      min-height: 36px;
-      border: 1px solid rgba(255, 51, 0, .24);
+      display: inline-flex;
+      min-height: 38px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(219, 57, 66, .55);
       border-radius: 4px;
-      padding: 6px 10px;
-      color: #d32f16;
-      background: #fff7f4;
+      padding: 7px 12px;
+      color: #ffb6b9;
+      background: rgba(164, 31, 39, .14);
       font: inherit;
       font-size: 12px;
-      line-height: 1.2;
       text-decoration: none;
       white-space: nowrap;
       cursor: pointer;
+      transition: background-color .18s ease, border-color .18s ease;
     }
-    .contact-action:hover, .contact-action:focus-visible { border-color: #f30; background: #fff0eb; }
-    .contact-action:focus-visible, a:focus-visible { outline: 2px solid #f30; outline-offset: 2px; }
-    .email-link { color: #d32f16; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-    .email-link:hover { color: #a21c0b; }
+    .contact-action:hover, .contact-action:focus-visible { border-color: #e14b53; background: rgba(164, 31, 39, .32); }
+    .contact-action:focus-visible, a:focus-visible { outline: 2px solid #ef737a; outline-offset: 3px; }
+    .email-link {
+      width: fit-content;
+      color: #ff777e;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+    .email-link:hover { color: #ffc0c3; }
     .email-row { flex-wrap: wrap; }
-    .email-hint { color: #777; font-size: 12px; text-decoration: none; }
     .foot {
       position: absolute;
+      right: 20px;
       bottom: 20px;
-      left: 50%;
-      width: 300px;
-      max-width: calc(100% - 40px);
-      transform: translateX(-50%);
+      left: 20px;
+      color: #777173;
+      font-size: 11px;
+      letter-spacing: .08em;
       text-align: center;
-      color: #777;
-      font-size: 12px;
     }
-    @media (max-width: 480px) {
-      .main { padding-top: 60px; }
-      .contact-row { flex-wrap: wrap; }
+    @media (max-width: 520px) {
+      .grid { padding: 28px 16px 68px; }
+      .main { padding: 26px 20px; }
+      .juzi { margin-bottom: 27px; font-size: 12px; }
+      .contact-row { grid-template-columns: 48px minmax(0, 1fr); gap: 8px; padding: 8px 0; }
+      .contact-row .contact-action { grid-column: 2; justify-self: start; min-height: 36px; }
+      .email-row .email-link { grid-column: 2; }
+      .email-row .contact-action { grid-column: 2; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
     }
   </style>
   <script>
