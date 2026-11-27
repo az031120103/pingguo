@@ -1,58 +1,136 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <title>pingguo.cn</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ed">
+  <meta name="description" content="Pingguo.cn 苹果域名诚意寻求合作或整体转让，欢迎联系洽谈。">
+  <title>Pingguo.cn — 域名合作与转让</title>
   <style>
-    * {
+    :root {
+      color-scheme: light;
+      --paper: #f5f3ed;
+      --ink: #202c25;
+      --muted: #73786f;
+      --accent: #a66f39;
+      --line: rgba(32, 44, 37, .14);
+      --serif: "Iowan Old Style", "Songti SC", "Noto Serif CJK SC", Georgia, serif;
+      --sans: "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100svh;
       margin: 0;
-      padding: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 15px/1.7 var(--sans);
+      -webkit-font-smoothing: antialiased;
     }
-    body,
-    html {
-      font: 16px/1.5 "Heiti SC","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",verdana;
-      color: #333;
-      background: #f9f9f9;
-      overflow-x: hidden;
+    .page {
+      position: relative;
+      display: flex;
+      min-height: 100svh;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 30px clamp(22px, 6vw, 88px) 24px;
     }
-    p {
-      min-height: 24px;
+    .topbar, .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
-    em {
-      font-style: normal;
-      color: #f30;
+    .brand {
+      font: 600 19px/1 var(--serif);
+      letter-spacing: -.04em;
     }
-    .grid {
-      position: absolute;
-      width: 100%;
-      height: 100%;
+    .top-note, .footer { color: var(--muted); font-size: 11px; letter-spacing: .12em; }
+    main {
+      position: relative;
+      display: grid;
+      width: min(100%, 1080px);
+      flex: 1;
+      grid-template-columns: minmax(0, 1.3fr) minmax(265px, .7fr);
+      align-items: center;
+      gap: clamp(42px, 10vw, 150px);
+      margin: 0 auto;
+      padding: 72px 0 82px;
     }
-    .main {
-      width: 300px;
-      margin: 0 auto 50px;
-      padding-top: 90px;
+    .hero { position: relative; z-index: 1; }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 25px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
     }
-    .juzi {
+    .eyebrow::before { width: 30px; height: 1px; background: currentColor; content: ""; }
+    h1 {
+      max-width: 700px;
+      margin: 0;
+      font: 400 clamp(52px, 8.8vw, 112px)/.98 var(--serif);
+      letter-spacing: -.065em;
+    }
+    h1 span { display: block; color: #6b766d; }
+    .intro { max-width: 420px; margin: 29px 0 0; color: #626960; font-size: 15px; line-height: 1.9; }
+    .contact {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--line);
+      padding-top: 23px;
+    }
+    .contact-label { margin: 0 0 20px; color: var(--muted); font-size: 11px; letter-spacing: .18em; }
+    .contact-row {
+      display: flex;
+      min-height: 53px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .contact-kind { color: var(--muted); font-size: 13px; }
+    .contact-value { color: var(--ink); font-size: 14px; font-weight: 500; text-decoration: none; }
+    a.contact-value:hover { color: var(--accent); }
+    .contact-action {
+      border: 0;
+      padding: 8px 0 8px 10px;
+      color: var(--accent);
+      background: transparent;
+      font: inherit;
       font-size: 12px;
-      margin-bottom: 15px;
-      font-style: italic;
+      cursor: pointer;
     }
-    .label {
-      display: inline-block;
-      width: 48px;
-      text-align: right;
-    }
-    .foot {
+    .contact-action:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .poem {
       position: absolute;
-      bottom: 20px;
-      left: 50%;
-      width: 300px;
-      margin-left: -150px;
-      text-align: center;
+      right: -40px;
+      bottom: 8%;
+      color: rgba(32, 44, 37, .045);
+      font: 400 clamp(150px, 25vw, 340px)/.9 var(--serif);
+      letter-spacing: -.12em;
+      user-select: none;
+      pointer-events: none;
+    }
+    .footer { border-top: 1px solid var(--line); padding-top: 16px; font-size: 10px; letter-spacing: .1em; }
+    @media (max-width: 680px) {
+      .page { padding: 24px 24px 20px; }
+      .top-note { font-size: 9px; letter-spacing: .08em; }
+      main { grid-template-columns: 1fr; gap: 48px; align-content: center; padding: 70px 0 60px; }
+      .eyebrow { margin-bottom: 20px; }
+      h1 { font-size: clamp(58px, 15vw, 88px); }
+      .intro { margin-top: 22px; font-size: 14px; }
+      .contact { max-width: 420px; }
+      .poem { right: -25px; bottom: 14%; font-size: 210px; }
+      .footer { font-size: 9px; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .hero, .contact { animation: arrive .7s ease-out both; }
+      .contact { animation-delay: .12s; }
+      @keyframes arrive { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     }
   </style>
   <script>
@@ -61,34 +139,55 @@
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-  <div class="grid">
-    <div class="main">
-      <div class="juzi">
-        <p>“</p>
-        <p>　虞翻宅里起秋风，</p>
-        <p>　翠叶玲珑剪未工。</p>
-        <p>　错认如花枝上艳，</p>
-        <p>　不知荚子缀猩红。</p>
-        <p>　　　----《南海百咏抄》</p>
-        <p>　　　　　　　　　　　　”</p>
-      </div>
-      <div class="coming-soon">
-        <p>网站寻求合作或整体转让</p>
-        <p>如有意向欢迎与我们联系洽谈。</p>
-        <p></p>
-        <p>
-          <span class="label">微信：</span><em>152 7122 6579</em>
-        </p>
-        <p>
-          <span class="label">邮箱：</span><em>5987027@qq.com</em>
-        </p>
-        <p>
-          <span class="label">QQ：</span><em>5987027</em></p>
-      </div>
-    </div>
-    <div class="foot">
-      © Pingguo.cn Domain Name
-    </div> 
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">pingguo.cn</div>
+      <div class="top-note">一个值得被记住的好名字</div>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">域名合作与转让</p>
+        <h1 id="page-title">好名字，<span>好去处。</span></h1>
+        <p class="intro">Pingguo.cn 现诚意寻求合作或整体转让。<br>如果这个名字适合你的下一段故事，欢迎联系我们。</p>
+      </section>
+      <section class="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="contact-label">洽谈联系 · GET IN TOUCH</h2>
+        <div class="contact-row">
+          <span class="contact-kind">微信</span>
+          <span class="contact-value">152 7122 6579</span>
+          <button class="contact-action" type="button" data-copy="152 7122 6579" aria-label="复制微信号">复制</button>
+        </div>
+        <div class="contact-row">
+          <span class="contact-kind">邮箱</span>
+          <a class="contact-value" href="mailto:5987027@qq.com">5987027@qq.com</a>
+          <a class="contact-action" href="mailto:5987027@qq.com">发邮件</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-kind">QQ</span>
+          <span class="contact-value">5987027</span>
+          <button class="contact-action" type="button" data-copy="5987027" aria-label="复制 QQ 号">复制</button>
+        </div>
+      </section>
+      <div class="poem" aria-hidden="true">苹</div>
+    </main>
+    <footer class="footer">
+      <span>© Pingguo.cn</span>
+      <span>DOMAIN NAME · EST. WITH POSSIBILITY</span>
+    </footer>
   </div>
+  <script>
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const original = button.textContent;
+        try {
+          await navigator.clipboard.writeText(button.dataset.copy);
+          button.textContent = "已复制";
+        } catch {
+          button.textContent = button.dataset.copy;
+        }
+        window.setTimeout(() => { button.textContent = original; }, 1600);
+      });
+    });
+  </script>
 </body>
 </html>
