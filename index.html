@@ -21,20 +21,32 @@
     .main { width: 300px; max-width: calc(100% - 40px); margin: 0 auto 50px; padding-top: 90px; }
     .juzi { font-size: 12px; margin-bottom: 15px; font-style: italic; }
     .label { display: inline-block; width: 48px; text-align: right; }
-    .contact-row { min-height: 30px; display: flex; align-items: center; gap: 4px; }
+    .contact-row {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
     .contact-action {
-      border: 0;
-      padding: 4px 6px;
-      color: #666;
-      background: transparent;
+      min-height: 36px;
+      border: 1px solid rgba(255, 51, 0, .24);
+      border-radius: 4px;
+      padding: 6px 10px;
+      color: #d32f16;
+      background: #fff7f4;
       font: inherit;
       font-size: 12px;
+      line-height: 1.2;
+      text-decoration: none;
+      white-space: nowrap;
       cursor: pointer;
     }
-    .contact-action:hover, .contact-action:focus-visible { color: #f30; }
+    .contact-action:hover, .contact-action:focus-visible { border-color: #f30; background: #fff0eb; }
     .contact-action:focus-visible, a:focus-visible { outline: 2px solid #f30; outline-offset: 2px; }
-    .email-link { color: #f30; text-decoration: none; }
-    .email-link:hover { text-decoration: underline; }
+    .email-link { color: #d32f16; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .email-link:hover { color: #a21c0b; }
+    .email-row { flex-wrap: wrap; }
+    .email-hint { color: #777; font-size: 12px; text-decoration: none; }
     .foot {
       position: absolute;
       bottom: 20px;
@@ -74,14 +86,16 @@
         <p></p>
         <div class="contact-row">
           <span class="label">微信：</span><em>152 7122 6579</em>
-          <button class="contact-action" type="button" data-copy="152 7122 6579" aria-label="复制微信号">复制</button>
+          <button class="contact-action" type="button" data-copy="152 7122 6579" aria-label="复制微信号">复制微信号</button>
         </div>
-        <div class="contact-row">
-          <span class="label">邮箱：</span><a class="email-link" href="mailto:5987027@qq.com">5987027@qq.com</a>
+        <div class="contact-row email-row">
+          <span class="label">邮箱：</span>
+          <a class="email-link" href="mailto:5987027@qq.com" aria-label="发送邮件至 5987027@qq.com">5987027@qq.com</a>
+          <a class="contact-action" href="mailto:5987027@qq.com">发送邮件 ↗</a>
         </div>
         <div class="contact-row">
           <span class="label">QQ：</span><em>5987027</em>
-          <button class="contact-action" type="button" data-copy="5987027" aria-label="复制 QQ 号">复制</button>
+          <button class="contact-action" type="button" data-copy="5987027" aria-label="复制 QQ 号">复制 QQ 号</button>
         </div>
       </section>
     </main>
