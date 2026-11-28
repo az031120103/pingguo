@@ -1,58 +1,117 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="format-detection" content="telephone=no">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f9f9f9">
+  <meta name="description" content="网站寻求合作或整体转让，如有意向欢迎与我们联系洽谈。">
   <title>pingguo.cn</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-    body,
-    html {
-      font: 16px/1.5 "Heiti SC","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",verdana;
-      color: #333;
-      background: #f9f9f9;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      min-height: 100svh;
       overflow-x: hidden;
-    }
-    p {
-      min-height: 24px;
-    }
-    em {
-      font-style: normal;
-      color: #f30;
+      color: #1a1a1a;
+      background: #f9f9f9;
+      font: 16px/1.5 "Heiti SC", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", verdana;
     }
     .grid {
-      position: absolute;
-      width: 100%;
-      height: 100%;
+      position: relative;
+      display: flex;
+      min-height: 100svh;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px 76px;
+      background: #f9f9f9;
     }
     .main {
-      width: 300px;
-      margin: 0 auto 50px;
-      padding-top: 90px;
+      width: min(100%, 620px);
+      padding: clamp(26px, 6vw, 54px);
+      border: 1px solid #e6e3e3;
+      border-top: 2px solid #c8102e;
+      background: #fff;
+      box-shadow: 0 18px 54px rgba(0, 0, 0, .08);
     }
     .juzi {
-      font-size: 12px;
-      margin-bottom: 15px;
+      margin-bottom: 34px;
+      padding-left: 18px;
+      border-left: 2px solid #c8102e;
+      color: #666;
+      font-size: 13px;
       font-style: italic;
+      line-height: 1.65;
     }
-    .label {
-      display: inline-block;
-      width: 48px;
-      text-align: right;
+    .juzi p { min-height: 0; }
+    .juzi p:first-child, .juzi p:last-child { color: #c8102e; }
+    .coming-soon > p { min-height: 0; }
+    .coming-soon > p:first-child {
+      color: #1a1a1a;
+      font-size: clamp(19px, 4vw, 23px);
+      font-weight: 500;
+      letter-spacing: .04em;
     }
+    .coming-soon > p:nth-child(2) { margin-top: 5px; color: #666; font-size: 14px; }
+    .coming-soon > p:nth-child(3) { display: none; }
+    em { color: #c8102e; font-style: normal; }
+    .label { display: inline-block; color: #555; }
+    .contact-row {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr) auto;
+      min-height: 58px;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid #e8e5e5;
+    }
+    .coming-soon > p:nth-child(2) { margin-bottom: 22px; }
+    .contact-action {
+      display: inline-flex;
+      width: 96px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #c8102e;
+      border-radius: 4px;
+      padding: 0 8px;
+      color: #fff;
+      background: #c8102e;
+      font: inherit;
+      font-size: 13px;
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color .18s ease, border-color .18s ease;
+    }
+    .contact-action:hover, .contact-action:focus-visible { border-color: #a30d25; background: #a30d25; }
+    .contact-action:focus-visible, a:focus-visible { outline: 2px solid #c8102e; outline-offset: 3px; }
+    .email-link {
+      width: fit-content;
+      color: #c8102e;
+      font-weight: 400;
+      text-decoration: none;
+    }
+    .email-link:hover { color: #a30d25; }
     .foot {
       position: absolute;
+      right: 20px;
       bottom: 20px;
-      left: 50%;
-      width: 300px;
-      margin-left: -150px;
+      left: 20px;
+      color: #777;
+      font-size: 12px;
+      letter-spacing: .08em;
       text-align: center;
+    }
+    @media (max-width: 520px) {
+      .grid { padding: 28px 12px 68px; }
+      .main { padding: 26px 16px; }
+      .juzi { margin-bottom: 27px; font-size: 12px; }
+      .contact-row { grid-template-columns: 48px minmax(0, 1fr) auto; gap: 8px; padding: 8px 0; }
+      .contact-row .contact-action { min-height: 36px; padding: 6px 8px; font-size: 13px; }
+      .email-link { font-weight: 400; white-space: nowrap; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
     }
   </style>
   <script>
@@ -62,8 +121,8 @@
 </head>
 <body>
   <div class="grid">
-    <div class="main">
-      <div class="juzi">
+    <main class="main">
+      <div class="juzi" aria-label="南海百咏抄·咏苹果">
         <p>“</p>
         <p>　虞翻宅里起秋风，</p>
         <p>　翠叶玲珑剪未工。</p>
@@ -72,23 +131,40 @@
         <p>　　　----《南海百咏抄》</p>
         <p>　　　　　　　　　　　　”</p>
       </div>
-      <div class="coming-soon">
+      <section class="coming-soon" aria-label="网站信息与联系方式">
         <p>网站寻求合作或整体转让</p>
         <p>如有意向欢迎与我们联系洽谈。</p>
         <p></p>
-        <p>
+        <div class="contact-row">
           <span class="label">微信：</span><em>152 7122 6579</em>
-        </p>
-        <p>
-          <span class="label">邮箱：</span><em>5987027@qq.com</em>
-        </p>
-        <p>
-          <span class="label">QQ：</span><em>5987027</em></p>
-      </div>
-    </div>
-    <div class="foot">
-      © Pingguo.cn Domain Name
-    </div> 
+          <button class="contact-action" type="button" data-copy="152 7122 6579" aria-label="复制微信号">复制微信号</button>
+        </div>
+        <div class="contact-row email-row">
+          <span class="label">邮箱：</span>
+          <a class="email-link" href="mailto:5987027@qq.com" aria-label="发送邮件至 5987027@qq.com">5987027@qq.com</a>
+          <a class="contact-action" href="mailto:5987027@qq.com">发送邮件 ↗</a>
+        </div>
+        <div class="contact-row">
+          <span class="label">QQ：</span><em>5987027</em>
+          <button class="contact-action" type="button" data-copy="5987027" aria-label="复制 QQ 号">复制 QQ 号</button>
+        </div>
+      </section>
+    </main>
+    <footer class="foot">© Pingguo.cn Domain Name</footer>
   </div>
+  <script>
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const original = button.textContent;
+        try {
+          await navigator.clipboard.writeText(button.dataset.copy);
+          button.textContent = "已复制";
+        } catch {
+          button.textContent = "请手动复制";
+        }
+        window.setTimeout(() => { button.textContent = original; }, 1600);
+      });
+    });
+  </script>
 </body>
 </html>
